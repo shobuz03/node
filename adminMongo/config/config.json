@@ -1,0 +1,12 @@
+{
+  "connections": {
+    "AzureMongoServer": {
+      "connection_string": "mongodb://52.163.215.27:27017",
+      "connection_options": {}
+    },
+    "LocalMongoServer": {
+      "connection_string": "mongodb://localhost:27017",
+      "connection_options": {}
+    }
+  }
+}
