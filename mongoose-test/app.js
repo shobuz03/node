@@ -14,7 +14,8 @@ var bookSchema = mongoose.Schema({
 //Optionally one can provide the name of collection where the instances
 //of this model get stored. In this case it is "mongoose_demo". Skipping
 //this value defaults the name of the collection to plural of model name i.e books.
-var Book = mongoose.model('Book', bookSchema, "mongoose_demo");
+//var Book = mongoose.model('Book', bookSchema, "mongoose_demo");
+var Book = mongoose.model('Book', bookSchema);
 
 var db = mongoose.connection;
 
