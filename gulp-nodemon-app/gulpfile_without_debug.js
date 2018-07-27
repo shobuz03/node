@@ -2,8 +2,7 @@
 let gulp=require('gulp'),
 nodemon=require('gulp-nodemon');
 
-gulp.task('default',()=>nodemon({
-    exec:'node --inspect',
+gulp.task('default',()=>nodemon({    
     script:'index.js',
     ext:'js',    
     env:{
