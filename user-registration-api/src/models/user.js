@@ -11,9 +11,15 @@ const userSchema = new mongoose.Schema({
         trim: true
     },
     email: {
-        type: String, required: true, unique: true, lowercase: true, validate: value => {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        validate: value => {
             if (validator.isEmail(value)) {
-                throw new Error({ error: 'Invalid Email address' });
+                throw new Error({
+                    error: 'Invalid Email address'
+                });
             }
         }
     },
@@ -22,5 +28,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
-    tokens: [{ token: { type: String, required: true } }]
+    tokens: [{
+        token: {
+            type: String,
+            required: true
+        }
+    }]
 });
