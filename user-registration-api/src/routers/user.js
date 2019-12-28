@@ -1,6 +1,7 @@
 'use strict'
 const express = require('express');
 const User = require('../models/user');
+const auth = require('../middleware/auth');
 const router = express.Router();
 
 router.get('/users', (req, res) => {
@@ -31,10 +32,7 @@ router.post('/users/login', async (req, res) => {
             email,
             password
         } = req.body;
-        console.log({
-            email,
-            password
-        });
+
         const user = await User.findByCredentials(email, password);
         if (!user) {
             return res.status(401).send({
@@ -50,5 +48,33 @@ router.post('/users/login', async (req, res) => {
         res.status(400).send(error);
     }
 });
+
+router.get('/users/me', auth, async (req, res) => {
+    //view logged in user profile
+    res.send(req.user);
+})
+router.post('/users/me/logout', auth, async (req, res) => {
+    // Log user out of the application
+    try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+            return token.token != req.token
+        })
+        await req.user.save()
+        res.send()
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
+router.post('/users/me/logoutall', auth, async (req, res) => {
+    // Log user out of all devices
+    try {
+        req.user.tokens.splice(0, req.user.tokens.length)
+        await req.user.save()
+        res.send()
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
 
 module.exports = router;
