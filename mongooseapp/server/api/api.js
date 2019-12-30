@@ -1,5 +1,5 @@
-const router=require('express').Router();
+const router = require('express').Router();
 
-router.use('/person',require('./person/personRoute'));
+router.use('/person', require('./person/personRoute'));
 
-module.exports=router;
+module.exports = router;

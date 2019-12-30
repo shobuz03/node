@@ -1,8 +1,8 @@
-const router=require('express').Router();
+const router = require('express').Router();
 
-const controller=require('./personController');
+const controller = require('./personController');
 router.route('/')
-.get(controller.get)
-.post(controller.post);
+    .get(controller.get)
+    .post(controller.post);
 
-module.exports=router;
+module.exports = router;

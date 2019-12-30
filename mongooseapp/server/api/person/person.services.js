@@ -1,0 +1,21 @@
+'use strict'
+const Person = require('./personModel');
+
+exports.getPersons = async (query, page, limit) => {
+    try {
+        let persons = await Person.find(query);
+        return persons;
+    }
+    catch (error) {
+        throw new Error('Something went wrong');
+    }
+}
+exports.savePersons = async (person) => {
+    try {
+
+        await person.save();
+    }
+    catch (error) {
+        throw new Error('Something went wrong');
+    }
+}
