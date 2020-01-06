@@ -11,18 +11,21 @@ exports.get = async (req, res, next) => {
     res.status(200).json(persons);
     next()
   } catch (error) {
-    res.status(400).json({ message: e.message });
+    res.status(400).json({
+      message: e.message
+    });
   }
 
 };
 
 exports.post = async (req, res, next) => {
   try {
-    let person = new Person(req.body);
-    await personService.savePersons(person);
+    let person = await personService.savePersons(req.body);
     res.status(201).json(person);
     next()
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({
+      message: error.message
+    });
   }
 };
