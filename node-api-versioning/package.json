@@ -1,5 +1,5 @@
 {
-  "name": "mongooseapp",
+  "name": "node-api-versioning",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,5 +15,8 @@
     "express": "^4.16.3",
     "lodash": "^4.17.10",
     "mongoose": "^5.2.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
