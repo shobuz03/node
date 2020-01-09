@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +15,8 @@
     "express-fileupload": "^1.1.6",
     "mongodb": "^3.4.1",
     "mongoose": "^4.13.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
