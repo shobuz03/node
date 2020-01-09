@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<html>
 
 <body>
-    <form ref="uploadForm" id="uploadForm" method="POST" action="http://localhost:3000/upload"
-        enctype="multipart/form-data">
-        <input type="file" name="sampleFile">
-        <input type="button" value="Upload!">
+    <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type="text" name="sampleData">
+        <input type='submit' value='Upload!' />
     </form>
 </body>
 
